@@ -1,0 +1,26 @@
+
+<table>
+<tr>
+<td id="d" name="d"></td>
+</tr>
+</table>
+<SCRIPT type=text/javascript>
+alert(document.getElementById("d"));
+//.innerHTML="AA";
+function Keycode(e){
+	var code = (window.event) ? event.keyCode : e.which; //IE : FF - Chrome both
+	if (code > 32 && code < 48) nAllow(e);
+	if (code > 57 && code < 65) nAllow(e);
+	if (code > 90 && code < 97) nAllow(e);
+	if (code > 122 && code < 127) nAllow(e); 
+}
+function nAllow(e){
+	alert('특수문자는 사용할수 없습니다.');
+	if(navigator.appName!="Netscape"){ //for not returning keycode value  
+		event.returnValue = false;  //IE ,  - Chrome both 
+	}else{
+		e.preventDefault(); //FF ,  - Chrome both
+   }
+}
+</SCRIPT> 
+<INPUT class=box_long onkeypress=Keycode(event); maxLength=45 size=25 type=text name=memo>
