@@ -1,7 +1,9 @@
 	/* <![CDATA[ */
 function CheckCont(){//고객명 입력 확인 후, 저장 함수 호출
+	var eg=document.getElementById("exps_gubn");
+	var ec=document.getElementById("exps_cate");
 	var cs=document.getElementById("cash_mony");
-	if(cs.value==""){
+	if(cs.value=="" || ec.value=="" || eg.value==""){
 		alert("입력 오류");
 		sFocus();
 	}else{
