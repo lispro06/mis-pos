@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <html>
 <head>
-	<title>펄 피부과 - 검토</title>
+	<title>수납관리 프로그램 - 검토</title>
 <link rel="shortcut icon" href="favicon.ico">
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery-1.4.1.js"></script>

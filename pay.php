@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title><?php echo $hospital;?> - 수입부</title>
+	<title>수납관리 프로그램 - 수입부</title>
 <link rel="shortcut icon" href="favicon.ico">
 <link href="style.css" rel="stylesheet" type="text/css" />
 <SCRIPT type="text/javascript" src="./jquery/jquery-1.4.2.min.js"></script>
