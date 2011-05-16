@@ -1,74 +1,39 @@
 <?php
 
 header("Content-Type: text/html; charset=UTF-8");
-// db관련 파일 인크루드
-if(file_exists("conf.php")){
-	include "conf.php";
+
+    define('__ZBXE__', true);
+
+	include("../../files/config/db.config.php");
+	$dbname=$db_info->db_userid;
+	$dbpass=$db_info->db_password;
+
+	function table_if($tableName)
+	{ 
+		global $connect,$dbname;
+		
+		$sql ="SHOW TABLES WHERE Tables_in_" . $dbname . " = '" . $tableName . "'";
+		$rs = mysql_query($sql);
+
+		if(!mysql_fetch_array($rs))
+			return FALSE;
+		else
+			return TRUE;
+	}
 	$connect = mysql_connect("localhost", $dbname, $dbpass); 
 	$result=mysql_select_db($dbname, $connect);
 	if ( !$connect ) { 
 		echo " 데이터베이스에 연결할 수 없습니다."; 
-		echo " db 정보를 설정합니다. ";
-?>
-	<form method="POST">
-		dbname : <input type="text" name="dbname" id="dbname"><br />
-		dbpass : <input type="text" name="dbpass" id="dbpass"><br />
-		<input type="submit" value="전송">
-	</form>
-<?php
-	exit;
+	}else{
+		if(!table_if ('toto_acl')){
+			$sql=file_get_contents("sql.txt");
+			$tabRes = mysql_query($sql, $connect); 
+		}
 	}
     mysql_query("set session character_set_connection=utf8;");
     mysql_query("set session character_set_results=utf8;");
     mysql_query("set session character_set_client=utf8;");
-}else{
-	$dbname=$_POST['dbname'];
-	$dbpass=$_POST['dbpass'];
-	$connect = mysql_connect("localhost", $dbname, $dbpass); 
-	$result=mysql_select_db($dbname, $connect);
-	if($connect){
-		$fp = fopen('conf.php', 'w');
-		fwrite($fp, '<?php
-	$dbname='.$dbname.';
-	$dbpass='.$dbpass.';
-?>');
-		fclose($fp);
-		$sql=file_get_contents("sql.txt");
-		$tabRes = mysql_query($sql, $connect); 
-		$host='Location:http://'.$_SERVER['SERVER_NAME'].'/?mid=sunap';
-		header($host);
-	}else{ 
-		echo " 데이터베이스에 연결할 수 없습니다."; 
-		echo " db 정보를 설정합니다. ";
-	}
-?>
-	<form method="POST">
-		dbname : <input type="text" name="dbname" id="dbname" value="<?php echo $_POST['dbname'];?>"><br />
-		dbpass : <input type="text" name="dbpass" id="dbpass" value="<?php echo $_POST['dbpass'];?>"><br />
-		<input type="submit" value="전송">
-	</form>
-<?php
-	exit;
-}
-/*
-function table_if($tableName)
-{ 
-	global $connect,$dbname;
-	
-	$sql ="SHOW TABLES WHERE Tables_in_" . $dbname . " = '" . $tableName . "'";
-	$rs = mysql_query($sql);
 
-	if(!mysql_fetch_array($rs))
-		return FALSE;
-	else
-		return TRUE;
-}
-	if(table_if ('toto_acl'){
-		$sql=file_get_contents("sql.txt");
-		$tabRes = mysql_query($sql, $connect); 
-	}
-*/
-	define('__ZBXE__', true);
 	require_once('../../config/config.inc.php');
 	$oContext = &Context::getInstance();
 	$oContext->init();
