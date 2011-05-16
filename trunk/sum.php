@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <HTML>
  <head>
-  <TITLE><?php echo $hospital;?> - 일정산 </TITLE>
+  <TITLE>수납관리 프로그램 - 일정산 </TITLE>
   <META NAME="Generator" CONTENT="EditPlus">
   <META NAME="Author" CONTENT="">
   <META NAME="Keywords" CONTENT="">
