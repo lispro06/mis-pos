@@ -2,7 +2,12 @@
 
 header("Content-Type: text/html; charset=UTF-8");
 // db관련 파일 인크루드 
-	include "conf.php";
+
+   	define('__ZBXE__', true);
+	include("../../files/config/db.config.php");
+	$dbname=$db_info->db_userid;
+	$dbpass=$db_info->db_password;
+
 	$connect = mysql_connect("localhost", $dbname, $dbpass); 
 	$result=mysql_select_db($dbname, $connect);
 	if ( !$connect ) { 
@@ -12,7 +17,6 @@ header("Content-Type: text/html; charset=UTF-8");
     mysql_query("set session character_set_results=utf8;");
     mysql_query("set session character_set_client=utf8;");
 
-define('__ZBXE__', true);
  require_once('../../config/config.inc.php');
  $oContext = &Context::getInstance();
  $oContext->init();
