@@ -36,7 +36,7 @@
 		<td class="noline"></td>
 		<td class="noline"><span style="font-size:12px;">구분</span></td>
 		<td class="noline">
-			<select id="end_gubn" name="end_gubn" class="clist">
+			<select id="end_gubn" name="end_gubn" class="clist" onchange="xajax_endView(xajax.$('end_gubn').value);">
 				<option value="0">마감요청</option>
 				<option value="1">마감완료</option>
 				<option value="2">작성중</option>
