@@ -26,6 +26,9 @@ header("Content-Type: text/html; charset=UTF-8");
 		echo " 데이터베이스에 연결할 수 없습니다."; 
 		exit;
 	}
+    mysql_query("set session character_set_connection=utf8;");
+    mysql_query("set session character_set_results=utf8;");
+    mysql_query("set session character_set_client=utf8;");
 		if(!table_if('toto_acl')){
 			$sql="CREATE TABLE `toto_acl` (
 			  `no` int(11) NOT NULL auto_increment,

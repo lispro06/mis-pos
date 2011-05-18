@@ -64,7 +64,7 @@ $(document).ready(function() {
 <body>
 <div class="exterior">
 	<div class="tabA">
-		<table border="0" style="text-align:center;width:100%;background-color:<?echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
+		<table border="0" style="text-align:center;width:100%;background-color:<?php echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
 		<tr><input type="hidden" name="sale_code" id="sale_code" value="11001" >
 		<td style="width:60%;">
 			<div id="tabs2" name="tabs2" style="width:100%">

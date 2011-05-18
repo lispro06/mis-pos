@@ -82,7 +82,7 @@ $(document).ready(function() {
 <div id="pdiv" style="position:absolute;top:100px;left:200px;width:500px;display:none;">preview</div>
 <div class="exterior">
 	<div class="tabA">
-		<table border="0" style="text-align:center;width:100%;background-color:<?echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
+		<table border="0" style="text-align:center;width:100%;background-color:<?php echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
 		<tr><input type="hidden" name="exps_code" id="exps_code" value="4000" >
 		<td style="width:50%;">
 			<div id="tabs2" name="tabs2" style="width:100%">
