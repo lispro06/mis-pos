@@ -31,7 +31,7 @@
 ?>
 <div class="exterior">
 <div class="tabA">
-		<table border="0" style="text-align:center;width:100%;background-color:<?echo $extColor;?>"><tr>
+		<table border="0" style="text-align:center;width:100%;background-color:<?php echo $extColor;?>"><tr>
 		<td class="noline"></td>
 		<td class="noline"></td>
 		<td class="noline"><span style="font-size:12px;">구분</span></td>

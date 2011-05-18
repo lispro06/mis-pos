@@ -54,22 +54,22 @@ $(document).ready(function() {
   
 });
 </script>
-<?
+<?php
 	// output the xajax javascript. This must be called between the head tags
 	$xajax->printJavascript();
 ?>
 <script>
 	/* <![CDATA[ */
 		window.onload = function() {
-<?
+<?php
 		if($_GET['mode']){
 ?>
 			xajax_<?php echo $_GET['mode'];?>("<?php echo $_GET['tn'];?>");
-<?
+<?php
 		}else{
 ?>
 			xajax_inquiry("<?php echo $setTime;?>","<?php echo $setTime;?>");
-<?
+<?php
 		}
 ?>
 		}
@@ -117,7 +117,7 @@ $(document).ready(function() {
 ?>
 <div class="exterior">
 	<div class="tabA">
-		<table border="0" style="text-align:center;width:100%;background-color:<?echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
+		<table border="0" style="text-align:center;width:100%;background-color:<?php echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
 		<tr>
 		<td style="width:45%">
 		<div id="tabs2" name="tabs2" style="width:100%">
