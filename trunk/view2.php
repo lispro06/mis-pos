@@ -31,12 +31,12 @@
 ?>
 <div class="exterior">
 <div class="tabA">
-		<table border="0" style="text-align:center;width:100%;background-color:<?echo $extColor;?>"><tr>
+		<table border="0" style="text-align:center;width:100%;background-color:<?php echo $extColor;?>"><tr>
 		<td class="noline"></td>
 		<td class="noline"></td>
 		<td class="noline"><span style="font-size:12px;">구분</span></td>
 		<td class="noline">
-			<select id="end_gubn" name="end_gubn" class="clist">
+			<select id="end_gubn" name="end_gubn" class="clist" onchange="xajax_endView(xajax.$('end_gubn').value);">
 				<option value="0">마감요청</option>
 				<option value="1">마감완료</option>
 				<option value="2">작성중</option>
@@ -49,7 +49,7 @@
 		<td class="noline"></td>
 		<td class="noline"></td>
 		<td class="noline"></td>
-		<td><input type="text" id="selDate" name="selDate" style="border:0px;background-color:<?echo $extColor;?>" disabled></td>
+		<td><input type="text" id="selDate" name="selDate" style="border:0px;background-color:<?php echo $extColor;?>" disabled></td>
 		<td class="noline"></td>
 		</tr></table>
 		<div id="wlist" name="wlist" style="overflow-y:auto; height:100px; width:99%; padding:4px;display:block;">
