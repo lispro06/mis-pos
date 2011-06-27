@@ -112,8 +112,22 @@ if($_SESSION['sunap']!="admin"){
 if($logged_info->is_admin=="Y" || $logged_info->group_list[3]=="정회원"){
 	if($_SESSION['sunap'] && $aclCnt && $aclIp){
 		$logout="<td style='text-align:center;width:70px;'><br /><a href='./sunap.php'>로그아웃</a></td>";
-	}else{
-		header("Location:./sunap.php");
+	}else{  	
+		echo "<script>alert('잘못된 접근입니다');";
+		echo "\n document.location.replace('./sunap.php');</script>";
+		$from_name = "[]";
+		$from = "[]";
+		$to = "[]";
+     $subject = "Access Deny"; // mail subject
+     $text = iconv("UTF-8","EUC-KR","사용자가 ".$_SERVER['REMOTE_ADDR']."로 접근했습니다."); // mail text
+		$html = "0";
+		$charset = "EUC-KR";
+
+		if(sendmail($from_name,$from,$to,$subject,$text,$html,$charset)) {
+		   echo "발송완료";
+		} else {
+		   echo "발송실패";
+		}
 	}
 }else{
 	$host='Location:http://'.$_SERVER['SERVER_NAME'].'/?mid=sunap&act=dispMemberLoginForm';
@@ -180,5 +194,34 @@ function comma($number){
 		$no="-".$no;
 	}
 	return $no;
+}
+// 메일 발송 함수
+function sendmail($name, $from, $to, $subject, $body, $html, $charset ) {
+     $smtp_server   = "[]"; //enter your smtp server here
+     $smtp_user      = "[]";    //enter your smtp username here
+     $smtp_passwd = "[]";     // enter your passwd
+ if(!$smtp_sock = fsockopen("$smtp_server", 25)) {
+  return false;
+ }
+ fputs($smtp_sock, "AUTH LOGIN\n");
+ fputs($smtp_sock, base64_encode($smtp_user)."\n");
+ fputs($smtp_sock, base64_encode($smtp_passwd)."\n");
+ fputs($smtp_sock, "HELO $smtp_server\n");
+ fputs($smtp_sock, "VRFY $stmp_user\n");
+ fputs($smtp_sock, "MAIL FROM:$from\n");
+ fputs($smtp_sock, "RCPT TO:$to\n");
+ fputs($smtp_sock, "DATA\n");
+ fputs($smtp_sock, "From: $name<$from>\n");
+ fputs($smtp_sock, "X-Mailer: miplus\n");  
+ if($html) fputs($smtp_sock, "Content-Type: text/html;");
+ else fputs($smtp_sock, "Content-Type: text/plain;");  
+ fputs($smtp_sock, "charset=$charser\n"); 
+ fputs($smtp_sock, "MIME-Version: 1.0\n"); 
+ fputs($smtp_sock, "Subject: $subject\n");
+ fputs($smtp_sock, "To: $to\n");
+ fputs($smtp_sock, "$body");
+ fputs($smtp_sock, "\n.\nQUIT\n");
+ fclose($smtp_sock);
+ return true;
 }
 ?>
