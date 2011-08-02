@@ -152,7 +152,7 @@ if($acc['cos'])
 function selectSale($exps_code,$start_date,$end_date)
 {
 	global $thead, $connect;
-	$selSql="select * from toto_exp where `exps_code` = '".$exps_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
+	$selSql="select * from pearl_exp where `exps_code` = '".$exps_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
 	$result = mysql_query($selSql, $connect); 
 	$total = mysql_num_rows($result); // 총 레코드 수
 	$num=$total;
@@ -160,35 +160,70 @@ function selectSale($exps_code,$start_date,$end_date)
 while($total--){
 	$row = mysql_fetch_row($result);
 	
-	$selSql2="select `exps_sort`, `exps_name` from toto_expc where `exps_cate` = '".$row[3]."'";
+	$selSql2="select `exps_sort`, `exps_name` from pearl_expc where `exps_cate` = '".$row[3]."'";
 	$result2 = mysql_query($selSql2, $connect); 
 	$row2 = mysql_fetch_row($result2);
-
 	
 	$reg_date=substr($row[7],2,2);
 	$reg_date=$reg_date."-".substr($row[7],4,2);
 	$reg_date=$reg_date."-".substr($row[7],6,2);
+
+
+//// 소계 출력 2011-04-16
+	if($reg_date==$pre_date || $pre_date==""){
+		$sum_date=$sum_date+$row[6];
+	}else{
+		if($sum_date==0)
+			$sum_date=$pre_val;
+		$updated=$updated.'<tr>';
+		$updated=$updated.'<td class="summ">'.$pre_date.'</td>';
+		$updated=$updated.'<td class="summ">소계</td>';
+		$updated=$updated.'<td class="summ" colspan="4">'.comma($sum_date).'</td>
+		</tr>';
+		$sum=$sum+$sum_date;
+		$sum_date=$row[6];
+	}
+
+
 	if(($num-$total)%5){
 		$ts="tdStyle";
 	}else{
-		$ts="fifthStyle";
+		$ts="tdStyle";
 	}
 	$updated=$updated.'<tr>
 	<td class="'.$ts.'">'.$reg_date.'</td>';
-	if($exps_code==4000 || $exps_code==4001)
-		$updated=$updated.'<td class="'.$ts.'">'.$row2[0].'</td>';
+	$updated=$updated.'<td class="'.$ts.'">'.$row2[0].'</td>';
 	$updated=$updated.'<td class="'.$ts.'">'.$row2[1].'</td>';
 	$updated=$updated.'<td class="'.$ts.'">'.$row[4].'</td>';
 	$updated=$updated.'<td class="'.$ts.'">'.$row[5].'</td>';
 	$updated=$updated.'<td class="'.$ts.'">'.comma($row[6]).'</td>
-
 	</tr>';
+// 오류 수정 2011-08-02
+		if($total==0){
+			if($reg_date==$pre_date){
+				$sum_date=$sum_date+$row[6];
+			}
+			$last=$last.'<tr>';
+			$last=$last.'<td class="summ">'.$pre_date.'</td>';
+			$last=$last.'<td class="summ">소계</td>';
+			$last=$last.'<td class="summ" colspan="4">'.comma($sum_date).'</td>
+			</tr>';
+			$sum=$sum+$sum_date;
+			$last=$last.'<tr>';
+			$last=$last.'<td class="summ">지출</td>';
+			$last=$last.'<td class="summ">합계</td>';
+			$last=$last.'<td class="summ" colspan="4">'.comma($sum).'</td>
+			</tr>';
+		}
+
+	$pre_date=$reg_date;
+	$pre_val=$row[6];
 
 	}
 	if($num==0){
 		$updated=$updated.'<tr><td colspan="6">자료가 없습니다</td></tr>';
 	}
-	$updated=$updated."</table>";
+	$updated=$updated.$last."</table>";
 	return $updated;
 }
 
