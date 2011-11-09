@@ -304,6 +304,9 @@ header("Content-Type: text/html; charset=UTF-8");
 			$tabRes = mysql_query($sql, $connect); 
 			$sql="INSERT INTO `toto_payc` VALUES (11, '3011', '보험', '', '');";
 			$tabRes = mysql_query($sql, $connect); 
+         
+      chmod("./logo", 777);//logo 디렉터리 권한 설정
+                  
 			if($tabRes){ 
 				$datetime=time();
 				$reg_date=date("Ymd",$datetime);
@@ -352,13 +355,13 @@ header("Content-Type: text/html; charset=UTF-8");
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>수납관리 시스템</title>
-<link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="./logo/favicon.ico">
 </head> 
 			<div style="text-align:center;position:relative;top:100px;">
 			<center>
 			<table style="text-align:center;" width="500">
 			<tr>
-			<td colspan="2"><img src="logins.jpg"></td>
+           <td colspan="2"><img src="./logo/logins.gif"></td>
 			</tr>
 			<tr>
 			<td align="center"><br />
