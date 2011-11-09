@@ -150,7 +150,7 @@ $msgDiv='<div id="msgDiv" name="msgDiv" style="background-color:#FFFF99;position
 
 $menuS='<table style="width:100%;table-layout:fixed;">
  <tr>
- <td><a href='.$firstUrl.'><img src="pearl.gif" border="0"></a></td>';
+  <td><a href='.$firstUrl.'><img src="./logo/logo.gif" border="0"></a></td>';
 	if($viewMenu){
 		$menuA='<td style="text-align:center;width:60px;'.$style['view.php'].'"><br /><a href="view.php">검토</a></td><td style="width:5px;"><br />|</td><td style="text-align:center;width:60px;'.$style['report.php'].'"><br /><a href="report.php">보고서</a></td><td style="width:5px;"><br />|</td>';
 
