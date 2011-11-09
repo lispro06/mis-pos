@@ -224,6 +224,33 @@ function acl(){
 	$objResponse->assign('content', 'innerHTML', $updated);
 	return $objResponse;
 }
+function logo(){
+	global $connect;
+	$objResponse = new xajaxResponse();
+	$table='<center><table border="1" style="text-align:center;width:99%;background-color:#FFFFFF;border-color:#CA2F32;" cellspacing="0" cellpadding="0">';
+	$thead='<tr>
+				<td>파비콘</td>
+				<td>아이콘</td>
+				<td>접속로고</td>
+			</tr>';
+			$updated=$updated.'<tr>
+						<td><img src="./logo/favicon.ico"></td>
+						<td><img src="./logo/logo.gif"></td>
+						<td><img src="./logo/logins.gif"></td>
+					</tr>';
+		$updated=$table.$thead.$updated.'</table>';
+		$updated=$updated.'<form action="img_up.php" method="post" enctype="multipart/form-data" target="_blank">
+		<p>파비콘/아이콘/접속로고 순으로 지정해 주세요.<br />
+		<input type="file" name="pictures[]" /><br />
+		<input type="file" name="pictures[]" /><br />
+		<input type="file" name="pictures[]" />
+		</p>';
+		$updated=$updated.'<input type="submit" name="변경" value="변경" /></form>';
+	$msg="로고 관리 화면입니다.";
+	$objResponse->assign('msgDiv', 'innerHTML', $msg);
+	$objResponse->assign('content', 'innerHTML', $updated);
+	return $objResponse;
+}
 function aclMod($no){
 	global $connect;
 	$objResponse = new xajaxResponse();
@@ -359,6 +386,7 @@ $reqInquiry =& $xajax->registerFunction('itemView');
 $reqInquiry =& $xajax->registerFunction('itemUpd');
 $reqInquiry =& $xajax->registerFunction('itemDel');
 $reqInquiry =& $xajax->registerFunction('acl');
+$reqInquiry =& $xajax->registerFunction('logo');
 $reqInquiry =& $xajax->registerFunction('aclMod');
 $reqInquiry =& $xajax->registerFunction('aclUpd');
 $reqInquiry =& $xajax->registerFunction('aclDel');
