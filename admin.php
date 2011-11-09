@@ -54,22 +54,22 @@ $(document).ready(function() {
   
 });
 </script>
-<?php
+<?
 	// output the xajax javascript. This must be called between the head tags
 	$xajax->printJavascript();
 ?>
 <script>
 	/* <![CDATA[ */
 		window.onload = function() {
-<?php
+<?
 		if($_GET['mode']){
 ?>
 			xajax_<?php echo $_GET['mode'];?>("<?php echo $_GET['tn'];?>");
-<?php
+<?
 		}else{
 ?>
 			xajax_inquiry("<?php echo $setTime;?>","<?php echo $setTime;?>");
-<?php
+<?
 		}
 ?>
 		}
@@ -117,26 +117,27 @@ $(document).ready(function() {
 ?>
 <div class="exterior">
 	<div class="tabA">
-		<table border="0" style="text-align:center;width:100%;background-color:<?php echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
+		<table border="0" style="text-align:center;width:100%;background-color:<?echo $extColor;?>" border="0" cellspacing="0" cellpadding="0">
 		<tr>
-		<td style="width:45%">
+		<td style="width:65%">
 		<div id="tabs2" name="tabs2" style="width:100%">
 			<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
 			  <tr>
-				<td height="30" align="center" style="width:2%;"></td>
-				<td height="30" align="center" style="width:14%"><a href="./admin.php?mode=acl"><span style="color:#FFFFFF">접속자관리</span></a> </td>
-				<td height="30" align="center" style="width:14%"><a href="./admin.php?mode=itemView&tn=toto_doctor"><span style="color:#FFFFFF">진료실</span></a></td>
-				<td height="30" align="center" style="width:14%"><a href="./admin.php?mode=itemView&tn=toto_payc"><span style="color:#FFFFFF">수납항목</span></a></td>
-				<td height="30" align="center" style="width:14%"><a href="./admin.php?mode=itemView&tn=toto_expc"><span style="color:#FFFFFF">지출항목</span></a></td>
-				<td height="30" align="center" style="width:14%"><a href="./admin.php?mode=itemView&tn=toto_bankbookinfo"><span style="color:#FFFFFF">통장관리</span></a></td>
-				<td height="30" align="center" style="width:14%"><a href="./admin.php?mode=itemView&tn=toto_page"><span style="color:#FFFFFF">페이지관리</span></a></td>
-				<td height="30" align="center" style="font-weight: bolder; width:15%;"><a href="#"><span style="color:#FFFFFF">메일 설정</span></a></td>
+				<td height="30" align="center" style="width:20px;"></td>
+				<td height="30" align="center" style=" width:70px;"><a href="./admin.php?mode=acl"><span style="color:#FFFFFF">접속자관리</span></a> </td>
+				<td height="30" align="center" style="width:70px;"><a href="./admin.php?mode=itemView&tn=toto_doctor"><span style="color:#FFFFFF">진료실</span></a></td>
+				<td height="30" align="center" style="width:70px;"><a href="./admin.php?mode=itemView&tn=toto_payc"><span style="color:#FFFFFF">수납항목</span></a></td>
+				<td height="30" align="center" style="width:70px;"><a href="./admin.php?mode=itemView&tn=toto_expc"><span style="color:#FFFFFF">지출항목</span></a></td>
+				<td height="30" align="center" style="width:70px;"><a href="./admin.php?mode=itemView&tn=toto_bankbookinfo"><span style="color:#FFFFFF">통장관리</span></a></td>
+				<td height="30" align="center" style="width:70px;"><a href="./admin.php?mode=itemView&tn=toto_page"><span style="color:#FFFFFF">페이지관리</span></a></td>
+				<td height="30" align="center" style="font-weight: bolder; width:70px;"><a href="#"><span style="color:#FFFFFF">메일 설정</span></a></td>
+				<td height="30" align="center" style="font-weight: bolder; width:70px;"><a href="./admin.php?mode=logo"><span style="color:#FFFFFF">로고 설정</span></a></td>
 			  </tr>	
 			</table>
 		</div>
 		</td>
-		<td style="width:30%"></td>
-		<td id="img_date_input"><span style="color:#FFFFFF;font-weight:bolder;">◈ 일자검색</span>
+		<td></td>
+		<td style="width:300" id="img_date_input"><span style="color:#FFFFFF;font-weight:bolder;">◈ 일자검색</span>
 		<input type="text" name="date_input" id="date_input" style="text-align:center;width:70px;" value="<?php echo $setTime?>" readonly />
 		<input type="button" onclick="xajax_inquiry(xajax.$('date_input').value);" value="로그보기"></td>
 		</tr></table>
