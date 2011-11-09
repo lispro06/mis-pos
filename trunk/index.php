@@ -1,6 +1,10 @@
 <!--@if($logged_info=="")-->
 	<script>
-		document.location.replace("./?mid=sunap&act=dispMemberLoginForm");
+		if(document.location.pathname=="/modules/hospital/"){
+			document.location.replace("./sunap.php");
+		}else{
+			document.location.replace("./?mid=sunap&act=dispMemberLoginForm");
+		}
 	</script>
 <!--@else-->
 	<!--@if($logged_info->is_admin=="Y" || $logged_info->group_list[3]=="정회원")-->
