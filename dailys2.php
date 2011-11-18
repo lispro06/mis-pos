@@ -113,7 +113,8 @@ function save($no,$d_afdy_mony,$d_doct_mony,$c_afdy_mony,$c_doct_mony,$reg_date)
 		if($row[3]>0){
 			$bank_in=$bank_in+$row[3];
 		}
-		$gen_yet=$gen_yet+$row[3];
+    if($gen_yet>0)
+        $gen_yet=$gen_yet+$row[3];
 	}
 		//피부과 일반 외상입금
 		$selSql="select `cash_mony`,`cscd_mony`,`card_mony`, `yet__mony` from toto_pay where `sale_code` = '1001' and `slit_code` = '2002' and `reg_date` between '".$date_input."' and '".$date_input."'";
@@ -159,7 +160,8 @@ function save($no,$d_afdy_mony,$d_doct_mony,$c_afdy_mony,$c_doct_mony,$reg_date)
 		if($row[3]>0){//통장 입금액 별도 저장 2011-04-15
 			$cos_bank=$cos_bank+$row[3];
 		}
-		$cos_yet=$cos_yet+$row[3];
+    if($cos_yet>0)
+        $cos_yet=$cos_yet+$row[3];
 	}
 		//코스메틱 외상입금
 		$selSql="select `cash_mony`,`cscd_mony`,`card_mony`,`yet__mony` from toto_pay where `sale_code` = '1002' and `slit_code` = '2002' and `reg_date` between '".$date_input."' and '".$date_input."'";
@@ -582,7 +584,8 @@ $updated=$updated.'</table>';
 		if($row[3]>0){//통장입금액만 별도 저장 2011-04-15
 			$bank_in=$bank_in+$row[3];
 		}
-		$gen_yet=$gen_yet+$row[3];
+    if($gen_yet>0)
+        $gen_yet=$gen_yet+$row[3];
 	}
 		//피부과 일반 외상입금
 		$selSql="select `cash_mony`,`cscd_mony`,`card_mony`, `yet__mony` from toto_pay where `sale_code` = '1001' and `slit_code` = '2002' and `reg_date` between '".$date_input."' and '".$date_input."'";
@@ -628,7 +631,8 @@ $updated=$updated.'</table>';
 		if($row[3]>0){//통장입금액 별도 저장
 			$cos_bank=$cos_bank+$row[3];
 		}
-		$cos_yet=$cos_yet+$row[3];
+    if($cos_yet>0)
+        $cos_yet=$cos_yet+$row[3];
 	}
 		//코스메틱 외상입금
 		$selSql="select `cash_mony`,`cscd_mony`,`card_mony`,`yet__mony` from toto_pay where `sale_code` = '1002' and `slit_code` = '2002' and `reg_date` between '".$date_input."' and '".$date_input."'";
