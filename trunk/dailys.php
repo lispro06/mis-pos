@@ -456,9 +456,9 @@ if($rows[30]=="Y"){
 	  </tr>
 	  <tr>
 		<td colspan="2" align="center" class="style2">매출총계</td>
-		<td class="style4">'.comma($rows[2]+$rows[3]+$rows[4]+$rows[5]+$rows[6]+$rows[7]).'</td>
-		<td class="style4">'.comma($rows[16]+$rows[17]+$rows[18]).'</td>
-		<td class="style4">'.comma($rows[2]+$rows[3]+$rows[4]+$rows[5]+$rows[16]+$rows[17]+$rows[6]+$rows[7]+$rows[18]).'</td>
+		<td class="style4">'.comma($rows[2]+$rows[3]+$rows[4]+$rows[5]+$rows[6]+$rows[7]+$rows[8]+$rows[9]).'</td>
+		<td class="style4">'.comma($rows[16]+$rows[17]+$rows[18]+$rows[19]+$rows[20]).'</td>
+		<td class="style4">'.comma($rows[2]+$rows[3]+$rows[4]+$rows[5]+$rows[6]+$rows[7]+$rows[8]+$rows[9]+$rows[16]+$rows[17]+$rows[18]+$rows[19]+$rows[20]).'</td>
 	  </tr>
 	</table>';
 
@@ -803,9 +803,9 @@ if($rows[30]=="Y"){
 	  </tr>
 	  <tr>
 		<td colspan="2" class="style2">매출총계</td>
-		<td class="style4">'.comma($gen_cash+$gen_cscd+$insu_cash+$insu_cscd+$gen_card+$insu_card+$gen_yet+$insu_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del).'</td>
-		<td class="style4">'.comma($cos_cash+$cos_cscd+$cos_card+$cos_yet+$cos_cash_del+$cos_cscd_del+$cos_card_del+$cos_yet__del+$cos_bank).'</td>
-		<td class="style4">'.comma($gen_cash+$gen_cscd+$cos_cash+$cos_cscd+$insu_cash+$insu_cscd+$gen_card+$cos_card+$insu_card+$gen_yet+$insu_yet+$cos_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del+$cos_cash_del+$cos_cscd_del+$cos_card_del+$cos_yet__del+$cos_bank).'</td>
+		<td class="style4">'.comma($gen_cash+$gen_cscd+$insu_cash+$insu_cscd+$gen_card+$insu_card+$gen_yet+$insu_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del+$d_refd).'</td>
+		<td class="style4">'.comma($cos_cash+$cos_cscd+$cos_card+$cos_yet+$cos_cash_del+$cos_cscd_del+$cos_card_del+$cos_yet__del+$cos_bank+$c_refd).'</td>
+		<td class="style4">'.comma($gen_cash+$gen_cscd+$cos_cash+$cos_cscd+$insu_cash+$insu_cscd+$gen_card+$cos_card+$insu_card+$gen_yet+$insu_yet+$cos_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del+$cos_cash_del+$cos_cscd_del+$cos_card_del+$cos_yet__del+$cos_bank+$d_refd+$c_refd).'</td>
 	  </tr>
 	</table>';
 
