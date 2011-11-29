@@ -962,9 +962,9 @@ $updated=$updated.'</table>';
 	  </tr>
 	  <tr>
 		<td colspan="2" class="style2">매출총계</td>
-		<td class="style4">'.comma($gen_cash+$gen_cscd+$insu_cash+$insu_cscd+$gen_card+$insu_card+$gen_yet+$insu_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del+$d_refd).'</td>
+		<td class="style4">'.comma($gen_cash+$gen_cscd+$insu_cash+$insu_cscd+$gen_card+$insu_card+$gen_yet+$insu_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del+$d_refd+$bank_in).'</td>
 		<td class="style4">'.comma($cos_cash+$cos_cscd+$cos_card+$cos_yet+$cos_cash_del+$cos_cscd_del+$cos_card_del+$cos_yet__del+$cos_bank+$c_refd).'</td>
-		<td class="style4">'.comma($gen_cash+$gen_cscd+$cos_cash+$cos_cscd+$insu_cash+$insu_cscd+$gen_card+$cos_card+$insu_card+$gen_yet+$insu_yet+$cos_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del+$cos_cash_del+$cos_cscd_del+$cos_card_del+$cos_yet__del+$cos_bank+$d_refd+$c_refd).'</td>
+		<td class="style4">'.comma($gen_cash+$gen_cscd+$cos_cash+$cos_cscd+$insu_cash+$insu_cscd+$gen_card+$cos_card+$insu_card+$gen_yet+$insu_yet+$cos_yet+$gen_cash_del+$gen_cscd_del+$gen_card_del+$gen_yet__del+$cos_cash_del+$cos_cscd_del+$cos_card_del+$cos_yet__del+$bank_in+$cos_bank+$d_refd+$c_refd).'</td>
 	  </tr>
 	</table>';
 
