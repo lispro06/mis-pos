@@ -181,7 +181,7 @@ function inquiry($sale_code,$end_date)
 function selectSale($sale_code,$start_date,$end_date)
 {
 	global $thead, $connect;
-	$selSql="select `reg_date` from pearl_pay where `sale_code` = '".$sale_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
+	$selSql="select `reg_date` from toto_pay where `sale_code` = '".$sale_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
 	$result = mysql_query($selSql, $connect); 
 	$total = mysql_num_rows($result); // 총 레코드 수
 	$num=$total;
@@ -202,7 +202,7 @@ while($total--){
 	$num=0;
 	for($ac=$start_date;$ac<=$end_date;$ac++){
 		$numOfList++;
-		$selSql="select * from pearl_pay where `sale_code` = '".$sale_code."' and `reg_date` = '".$ac."' order by reg_date asc";
+		$selSql="select * from toto_pay where `sale_code` = '".$sale_code."' and `reg_date` = '".$ac."' order by reg_date asc";
 		$result = mysql_query($selSql, $connect); 
 		$total = mysql_num_rows($result); // 총 레코드 수
 		$num=$total;
@@ -221,7 +221,7 @@ while($total--){
 			$t_yet_income=$t_yet_income+$row[11];
 			}
 		$exps_code=$sale_code+2999;
-		$selSql2="select `cash_mony` from pearl_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='0'";
+		$selSql2="select `cash_mony` from toto_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='0'";
 		$result2 = mysql_query($selSql2, $connect); 
 		$total2 = mysql_num_rows($result2); // 총 레코드 수
 
@@ -230,7 +230,7 @@ while($total--){
 			$cash_outcome=$cash_outcome+$row2[0];
 			$t_cash_outcome=$t_cash_outcome+$row2[0];
 			}
-		$selSql2="select `cash_mony` from pearl_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='1'";
+		$selSql2="select `cash_mony` from toto_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='1'";
 		$result2 = mysql_query($selSql2, $connect); 
 		$total2 = mysql_num_rows($result2); // 총 레코드 수
 
@@ -239,7 +239,7 @@ while($total--){
 			$cscd_outcome=$cscd_outcome+$row2[0];
 			$t_cscd_outcome=$t_cscd_outcome+$row2[0];
 			}
-		$selSql2="select `cash_mony` from pearl_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='2'";
+		$selSql2="select `cash_mony` from toto_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='2'";
 		$result2 = mysql_query($selSql2, $connect); 
 		$total2 = mysql_num_rows($result2); // 총 레코드 수
 
@@ -248,7 +248,7 @@ while($total--){
 			$card_legal=$card_legal+$row2[0];
 			$t_card_legal=$t_card_legal+$row2[0];
 			}
-		$selSql2="select `cash_mony` from pearl_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='3'";
+		$selSql2="select `cash_mony` from toto_exp where `exps_code` = '".$exps_code."' and `reg_date` = '".$ac."' and exps_gubn='3'";
 		$result2 = mysql_query($selSql2, $connect); 
 		$total2 = mysql_num_rows($result2); // 총 레코드 수
 
@@ -343,13 +343,13 @@ while($total--){
 function selectAll($sale_code,$start_date,$end_date)
 {
 	global $thead, $connect, $tableD;
-	$selSql1="select `reg_date` from pearl_pay where `sale_code` = '".$sale_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
+	$selSql1="select `reg_date` from toto_pay where `sale_code` = '".$sale_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
 	$result = mysql_query($selSql1, $connect); 
 	$total1 = mysql_num_rows($result); // 총 레코드 수
 	$num=$total1;
 
 	// 병원이름 출력 2011-03-31
-	$docSql="select * from t_doctor order by `no` asc";
+	$docSql="select * from toto_doctor order by `no` asc";
 	$docRes = mysql_query($docSql, $connect); 
 	$docTot = mysql_num_rows($docRes); // 총 레코드 수
 	$docNum=$docTot;
@@ -373,7 +373,7 @@ function selectAll($sale_code,$start_date,$end_date)
 			$num=0;
 			for($ac=$start_date;$ac<=$end_date;$ac++){//피부과 자료 정리
 				$numOfList++;
-				$selSql="select sum(cash_mony+cscd_mony+card_mony+yet__mony), sum(card_mony), sum(cash_mony+cscd_mony) from pearl_pay where `sale_code` = '".$sale_code."' and rmdy_doct = '".$docRow[1]."' and `reg_date` = '".$ac."' order by reg_date asc";
+				$selSql="select sum(cash_mony+cscd_mony+card_mony+yet__mony), sum(card_mony), sum(cash_mony+cscd_mony) from toto_pay where `sale_code` = '".$sale_code."' and rmdy_doct = '".$docRow[1]."' and `reg_date` = '".$ac."' order by reg_date asc";
 				$result = mysql_query($selSql, $connect); 
 				$total = mysql_num_rows($result); // 총 레코드 수
 				$num=$total;
@@ -388,7 +388,7 @@ function selectAll($sale_code,$start_date,$end_date)
 				}
 
 				if($sale_code==1001){//병원 합계 일 때 만 지출 계산
-					$selSql2="select `cash_mony` from pearl_exp where `exps_code` = '4000' and `reg_date` = '".$ac."' order by reg_date asc";
+					$selSql2="select `cash_mony` from toto_exp where `exps_code` = '4000' and `reg_date` = '".$ac."' order by reg_date asc";
 					$result2 = mysql_query($selSql2, $connect); 
 					$total2 = mysql_num_rows($result2); // 총 레코드 수
 						$outcome_today=0;

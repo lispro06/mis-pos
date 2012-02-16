@@ -4,7 +4,7 @@ header("Content-Type: text/html; charset=UTF-8");
 // db관련 파일 인크루드 
 
    	define('__ZBXE__', true);
-	include("../../files/config/db.config.php");
+	include("../files/config/db.config.php");
 	$dbname=$db_info->db_userid;
 	$dbpass=$db_info->db_password;
 
@@ -17,7 +17,7 @@ header("Content-Type: text/html; charset=UTF-8");
     mysql_query("set session character_set_results=utf8;");
     mysql_query("set session character_set_client=utf8;");
 
- require_once('../../config/config.inc.php');
+ require_once('../config/config.inc.php');
  $oContext = &Context::getInstance();
  $oContext->init();
     
@@ -133,7 +133,7 @@ if($logged_info->is_admin=="Y" || $logged_info->group_list[3]=="정회원"){
 	$host='Location:http://'.$_SERVER['SERVER_NAME'].'/?mid=sunap&act=dispMemberLoginForm';
 	header($host);
 }
-	$docSql="select * from t_doctor order by `no` asc";
+	$docSql="select * from toto_doctor order by `no` asc";
 	$docRes = mysql_query($docSql, $connect); 
 	$docTot = mysql_num_rows($docRes); // 총 레코드 수
 	$docRow = mysql_fetch_row($docRes);

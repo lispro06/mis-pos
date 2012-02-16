@@ -196,7 +196,7 @@ function parent($sale_code){
 	$updated=selectSale($sale_code,$date_input,$date_input);
 	$objResponse->assign('date_input', 'value', $setTime);
 
-	$selSql="SELECT * FROM `t_closedsale` where `reg_date` = ".$date_input;
+	$selSql="SELECT * FROM `toto_closedsale` where `reg_date` = ".$date_input;
 	$result = mysql_query($selSql, $connect); 
 	$rows = mysql_fetch_row($result);
 	if($rows[30]=="Y"){
@@ -533,7 +533,7 @@ function selectSale($saleCode,$start_date,$end_date)
 	session_register("reg_date");
 	$_SESSION['session_reg_date']=$start_date;
 
-	$selSqlC="SELECT * FROM `t_closedsale` where `reg_date` = ".$start_date;
+	$selSqlC="SELECT * FROM `toto_closedsale` where `reg_date` = ".$start_date;
 	$resultC = mysql_query($selSqlC, $connect); 
 	$rowc = mysql_fetch_row($resultC);//마감 여부
 
