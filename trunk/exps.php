@@ -125,7 +125,7 @@ function inquiry($exps_code,$start_date,$end_date)
 	$end_date=str_replace("-","",$end_date);// '-' 제거
 
 	$inputDiv=$thead[$exps_code].$tfoot[$exps_code].'</table>';
-	$selSql="SELECT * FROM `t_closedsale` where `reg_date` = ".$start_date;
+	$selSql="SELECT * FROM `toto_closedsale` where `reg_date` = ".$start_date;
 	$result = mysql_query($selSql, $connect); 
 	$rows = mysql_fetch_row($result);
 	if($rows[29]=="Y"){
@@ -174,7 +174,7 @@ function parent($exps_code){
 	$objResponse->assign('date_input', 'value', $setTime);
 	$objResponse->assign('content', 'innerHTML', $updated);
 
-	$selSql="SELECT * FROM `t_closedsale` where `reg_date` = ".$date_input;
+	$selSql="SELECT * FROM `toto_closedsale` where `reg_date` = ".$date_input;
 	$result = mysql_query($selSql, $connect); 
 	$rows = mysql_fetch_row($result);
 	if($rows[29]=="Y"){
@@ -269,7 +269,7 @@ function editBt($no,$exps_code)
 function selectSale($exps_code,$start_date,$end_date)
 {
 	global $thead, $connect,$_SESSION, $acc;
-	$selSql="SELECT * FROM `t_closedsale` where `reg_date` = ".$start_date;
+	$selSql="SELECT * FROM `toto_closedsale` where `reg_date` = ".$start_date;
 	$resultC = mysql_query($selSql, $connect); 
 	$rowc = mysql_fetch_row($resultC);
 

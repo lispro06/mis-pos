@@ -152,7 +152,7 @@ if($acc['cos'])
 function selectSale($exps_code,$start_date,$end_date)
 {
 	global $thead, $connect;
-	$selSql="select * from pearl_exp where `exps_code` = '".$exps_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
+	$selSql="select * from toto_exp where `exps_code` = '".$exps_code."' and `reg_date` between '".$start_date."' and '".$end_date."' order by reg_date asc";
 	$result = mysql_query($selSql, $connect); 
 	$total = mysql_num_rows($result); // 총 레코드 수
 	$num=$total;
@@ -160,7 +160,7 @@ function selectSale($exps_code,$start_date,$end_date)
 while($total--){
 	$row = mysql_fetch_row($result);
 	
-	$selSql2="select `exps_sort`, `exps_name` from pearl_expc where `exps_cate` = '".$row[3]."'";
+	$selSql2="select `exps_sort`, `exps_name` from toto_expc where `exps_cate` = '".$row[3]."'";
 	$result2 = mysql_query($selSql2, $connect); 
 	$row2 = mysql_fetch_row($result2);
 	

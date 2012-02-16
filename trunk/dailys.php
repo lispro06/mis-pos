@@ -142,7 +142,7 @@ function save($no,$d_afdy_mony,$d_doct_mony,$c_afdy_mony,$c_doct_mony,$reg_date)
 		if($row[3]>0){//통장 입금액 별도 저장 2011-04-15
 			$cos_bank=$cos_bank+$row[3];
 		}
-    ($cos_yet>0)
+    if($cos_yet>0)
         $cos_yet=$cos_yet+$row[3];
 	}
 		//코스메틱 외상입금
