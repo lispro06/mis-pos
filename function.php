@@ -502,7 +502,7 @@ function inquiry($sale_code,$start_date,$end_date)
 	$updated=selectSale($sale_code,$start_date,$end_date);
 	$inputDiv=$tfoot[$sale_code];
 
-	$selSql="SELECT * FROM `t_closedsale` where `reg_date` = ".$start_date;
+	$selSql="SELECT * FROM `toto_closedsale` where `reg_date` = ".$start_date;
 	$result = mysql_query($selSql, $connect); 
 	$rows = mysql_fetch_row($result);
 	$objResponse->call('fr.reset()');
