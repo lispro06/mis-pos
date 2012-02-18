@@ -21,7 +21,7 @@ $msgDiv='<div id="msgDiv" name="msgDiv" style="background-color:#FFFF99;position
 <html>
 <head>
 	<title>수납관리 프로그램 - 관리자</title>
-<link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="logo/favicon.ico">
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="jquery-1.4.1.js"></script>
