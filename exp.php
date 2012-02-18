@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>수납관리 프로그램 - 지출부</title>
-<link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="logo/favicon.ico">
 <link href="style.css" rel="stylesheet" type="text/css" />
 <SCRIPT type="text/javascript" src="./jquery/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="jquery-1.4.1.js"></script>
