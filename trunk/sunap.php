@@ -82,7 +82,9 @@ header("Content-Type: text/html; charset=UTF-8");
 			  `bank` varchar(100) NOT NULL,
 			  PRIMARY KEY  (`no`)
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;";
-			$tabRes = mysql_query($sql, $connect); 
+			$tabRes = mysql_query($sql, $connect);   
+      $sql="INSERT INTO `toto_bankbookinfo` (`no`, `bkbk_name`, `sort_numb`, `use_flag`, `bank`) VALUES (1, '피부과1', 1, '01', 'G'), (2, '피부과2', 2, '01', 'G'), (3, '코스메틱1', 1, '02', 'C'), (4, '코스메틱2', 10, '02', 'C');"
+			$tabRes = mysql_query($sql, $connect);
 			$sql="CREATE TABLE `toto_closedsale` (
 			  `no` int(11) NOT NULL auto_increment,
 			  `d_afdy_mony` bigint(20) NOT NULL,
