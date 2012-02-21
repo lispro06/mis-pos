@@ -421,8 +421,8 @@ if($rows[30]=="Y"){
 		<td rowspan="4" align="center" class="style2">카드</td>
 		<td><div align="left" class="style2">일반</div></td>
 		<td class="cashStyle">'.comma($rows[6]).'</td>
-		<td class="cashStyle">'.comma($rows[16]).'</td>
-		<td class="cashStyle">'.comma($rows[6]+$rows[16]).'</td>
+		<td class="cashStyle">'.comma($rows[18]).'</td><!-- 코스메틱 일반 카드 매출 -->
+		<td class="cashStyle">'.comma($rows[6]+$rows[18]).'</td>
 	  </tr>
 	  <tr>
 		<td class="style2">보험</td>
@@ -433,7 +433,7 @@ if($rows[30]=="Y"){
 	  <tr>
 		<td class="style2">소계</td>
 		<td class="cashStyle">'.comma($rows[6]+$rows[7]).'</td><!--카드일반+카드보험-->
-		<td class="cashStyle">'.comma($rows[18]).'</td>
+		<td class="cashStyle">'.comma($rows[18]).'</td><!-- 코스메틱은 보험이 없음 -->
 		<td class="cashStyle">'.comma($rows[6]+$rows[7]+$rows[18]).'</td>
 	  </tr>
 	  <tr>
