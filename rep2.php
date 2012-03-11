@@ -138,9 +138,9 @@ function inquiry($sale_code,$end_date)
 	$menuDiv='<table border="0" cellspacing="0" cellpadding="0">
       <tr>
 		<td height="30" align="center"'.$style[1000].'></td>
-        <td width="150" height="30" align="center" '.$selTab[11001].'><div '.$selClass[11001].'><a href="report.php"><span style="'.$sCol[11001].'">일매출전체(피부과)</span></a></div></td>
-        <td width="150" height="30" align="center" '.$selTab[1001].'><div '.$selClass[1001].'><a href="#" onclick="xajax_inquiry(1001,\''.$end_date.'\')"><span style="'.$sCol[1001].'">일매출병원(피부과)</span></a></div></td>
-        <td width="150" height="30" align="center" '.$selTab[11002].'><div '.$selClass[11002].'><a href="#" onclick="xajax_inquiry(11002,\''.$end_date.'\')"><span style="'.$sCol[11002].'">일매출전체(코스메틱)</span></a></div></td>
+        <td width="150" height="30" align="center" '.$selTab[11001].'><div '.$selClass[11001].'><a href="report.php"><span style="'.$sCol[11001].'">일매출병원(피부과)</span></a></div></td>
+        <td width="150" height="30" align="center" '.$selTab[1001].'><div '.$selClass[1001].'><a href="#" onclick="xajax_inquiry(1001,\''.$end_date.'\')"><span style="'.$sCol[1001].'">일매출전체(피부과)</span></a></div></td>
+        <td width="150" height="30" align="center" '.$selTab[11002].'><div '.$selClass[11002].'><a href="#" onclick="xajax_inquiry(11002,\''.$end_date.'\')"><span style="'.$sCol[11002].'">일매출병원(코스메틱)</span></a></div></td>
         <td width="150" height="30" align="center" '.$selTab[1002].'><div '.$selClass[1002].'><a href="#" onclick="xajax_inquiry(1002,\''.$end_date.'\')"><span style="'.$sCol[1002].'">일매출전체(코스메틱)</span></a></div></td>
         <td width="100" height="30" align="center" class="box_Bottomline">&nbsp;</td>
       </tr>	
