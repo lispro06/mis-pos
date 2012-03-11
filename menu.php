@@ -180,10 +180,11 @@ function comma($number){
 		$number=$number*(-1);
 	}
 	$nl=strlen($number);
-	if($nl>6){
+	if($nl>9){
+		$no=substr($number,0,$nl-9).",".substr($number,$nl-9,3).",".substr($number,$nl-6,3).",".substr($number,-3);
+	}else if($nl>6){
 		$no=substr($number,0,$nl-6).",".substr($number,$nl-6,3).",".substr($number,-3);
-	}
-	else if($nl>3){
+	}else if($nl>3){
 		$no=substr($number,0,$nl-3).",".substr($number,-3);
 	}else if($nl>0){
 		$no=$number;
