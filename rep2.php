@@ -396,7 +396,11 @@ function selectAll($sale_code,$start_date,$end_date)
 				if($sale_code==1001)//병원 합계 일 때 만 지출 계산
 					$updated=$updated.'<td class="tdStyle">'.comma($outcome).'</td>';
 					$updated=$updated.'<td class="tdStyle">'.comma($cash_income+$cscd_income).'</td>';
+				if($income==0){//2012-03-11 income이 0이면 erorr 수정
+					$updated=$updated.'<td class="tdStyle">-</td></tr>';
+				}else{
 					$updated=$updated.'<td class="tdStyle">'.round_up(($card_income/$income),3).'</td></tr>';
+				}
 					$updated=$updated.'<tr>
 					<td class="tdStyle">합계</td>';
 					$updated=$updated.'<td class="tdStyle">'.comma($income).'</td>';
@@ -406,7 +410,11 @@ function selectAll($sale_code,$start_date,$end_date)
 				if($sale_code==1001)//병원 합계 일 때 만 지출 계산
 					$updated=$updated.'<td class="tdStyle">'.comma($outcome).'</td>';
 					$updated=$updated.'<td class="tdStyle">'.comma($cash_income+$cscd_income).'</td>';
+				if($income==0){//2012-03-11 income이 0이면 erorr 수정
+					$updated=$updated.'<td class="tdStyle">-</td></tr>';
+				}else{
 					$updated=$updated.'<td class="tdStyle">'.round_up(($card_income/$income),3).'</td></tr>';
+				}
 				$updated=$updated.'</table>';
 		}else{//피부과
 			while($docTot--){
