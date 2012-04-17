@@ -150,7 +150,7 @@ $(document).ready(function() {
 		</tr></table>
 		<form id="fr" name="fr">
 		<div id="input" name="input" class="input">
-		<?php echo $thead[$exps_code].$tfoot[$exps_code].'</table>';?>
+		<?php echo $thead[4000].$tfoot[4000].'</table>';?>
 		</div>
 		</form>
 		<br /><br />
