@@ -83,7 +83,7 @@ header("Content-Type: text/html; charset=UTF-8");
 			  PRIMARY KEY  (`no`)
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;";
 			$tabRes = mysql_query($sql, $connect);   
-      $sql="INSERT INTO `toto_bankbookinfo` (`no`, `bkbk_name`, `sort_numb`, `use_flag`, `bank`) VALUES (1, '피부과1', 1, '01', 'G'), (2, '피부과2', 2, '01', 'G'), (3, '코스메틱1', 1, '02', 'C'), (4, '코스메틱2', 10, '02', 'C');"
+      $sql="INSERT INTO `toto_bankbookinfo` (`no`, `bkbk_name`, `sort_numb`, `use_flag`, `bank`) VALUES (1, '피부과1', 1, '01', 'G'), (2, '피부과2', 2, '01', 'G'), (3, '코스메틱1', 1, '02', 'C'), (4, '코스메틱2', 10, '02', 'C');";
 			$tabRes = mysql_query($sql, $connect);
 			$sql="CREATE TABLE `toto_closedsale` (
 			  `no` int(11) NOT NULL auto_increment,
@@ -188,16 +188,17 @@ header("Content-Type: text/html; charset=UTF-8");
 			  PRIMARY KEY  (`no`),
 			  UNIQUE KEY `no` (`no`)
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;";
-			$tabRes = mysql_query($sql, $connect); $sql="CREATE TABLE IF NOT EXISTS `toto_expc` (
+			$tabRes = mysql_query($sql, $connect);
+       $sql="CREATE TABLE IF NOT EXISTS `toto_expc` (
   `no` int(11) NOT NULL auto_increment,
   `exps_cate` varchar(4) NOT NULL,
   `exps_sort` varchar(50) NOT NULL,
   `exps_name` varchar(100) NOT NULL,
   `exps_code` varchar(4) NOT NULL,
   PRIMARY KEY  (`no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=74 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=74";
 			$tabRes = mysql_query($sql, $connect); 
-INSERT INTO `toto_expc` (`no`, `exps_cate`, `exps_sort`, `exps_name`, `exps_code`) VALUES
+			$sql="INSERT INTO `toto_expc` (`no`, `exps_cate`, `exps_sort`, `exps_name`, `exps_code`) VALUES
 (1, '0000', '토토다우드', '토토다우드', '4000'),
 (2, '1000', '광고판촉비', '광고판촉비', '4000'),
 (3, '1001', '광고선전비', '광고선전비', '4000'),
