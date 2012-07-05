@@ -190,7 +190,7 @@ $(document).ready(function() {
 		<div id="pv" name="pv" style="text-align:right;width:99%;display:none;">
 		<input type="button" value="집계미리보기" onClick='xajax_preview(xajax.$("date_input").value,xajax.$("date_input").value);'>
 		</div>
-<?
+<?php
 	}
 ?>
 		<div id="content" name="content" style="width:99%; height:100%; padding:4px; border:1 solid #000000;">
