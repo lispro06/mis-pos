@@ -155,8 +155,11 @@ header("Content-Type: text/html; charset=UTF-8");
 			  `hosp_name` varchar(20) NOT NULL,
 			  `etc` varchar(100) NOT NULL,
 			  PRIMARY KEY  (`no`)
-			) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;";
+			) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 			$tabRes = mysql_query($sql, $connect); 
+			$sql="INSERT INTO `toto_doctor` (`no`, `doct_numb`, `doct_name`, `hosp_name`, `etc`) VALUES(1, '1', '원장', '병원', '');";
+			$tabRes = mysql_query($sql, $connect);
+
 			$sql="CREATE TABLE `toto_exp` (
 			  `no` int(100) NOT NULL auto_increment,
 			  `exps_code` varchar(4) NOT NULL,
