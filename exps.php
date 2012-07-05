@@ -252,7 +252,7 @@ function editBt($no,$exps_code)
 	$objResponse->assign('exps_cust', 'value', $row[4]);
 	$objResponse->assign('exps_caus', 'value', $row[5]);
 	$objResponse->assign('cash_mony', 'value', $row[6]);
-	$objResponse->call('top()');
+	$objResponse->call('ttop');
 	$reg_date=substr($row[7],0,4);
 	$reg_date=$reg_date."-".substr($row[7],4,2);
 	$reg_date=$reg_date."-".substr($row[7],6,2);
