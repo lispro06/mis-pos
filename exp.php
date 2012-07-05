@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="./autocomplete/jquery.autocomplete.js"></script>
 <script>
 <?php
-	$selSql2="select * from toto_expc WHERE `exps_code`='4000' order by `exps_name` asc";
+	$selSql2="select * from toto_expc WHERE `exps_code`='".$_GET["exps_code"]."' order by `exps_name` asc";
 	$result2 = mysql_query($selSql2, $connect); 
 	$total = mysql_num_rows($result2); // 총 레코드 수
 	$num=$total;
@@ -32,11 +32,9 @@
 		$output=$output.'"'.($no).'. '.$row2[3].'",';
 	}
 		$output=$output.'""];';
-	if($_GET["exps_code"]==4001){
-		echo '	var goods = ["01. 화장품","02. 잡비",""];';
-	}else{
+ 
 		echo $output;
-	}
+ 
 ?>
 
 	var exps_gubns = ["01. 현금","02. 통장","03. 카드(법인)","04. 카드(개인)",""];
