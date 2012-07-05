@@ -310,7 +310,7 @@ function editBt($no,$sale_code)
 	$reg_date=$reg_date."-".substr($row[14],6,2);
 	$objResponse->assign('date_input', 'value', $reg_date);
 //	$objResponse->assign('div2', 'innerHTML', $query);
-	$objResponse->call('top');//div scolling
+	$objResponse->call('ttop');//div scolling
 	return $objResponse;
 }
 /*
