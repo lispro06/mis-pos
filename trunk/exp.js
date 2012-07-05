@@ -26,7 +26,7 @@ function preview(){
 	prediv = document.getElementById("pdiv");
 	prediv.style.display = "block";
 }
-function top(){
+function ttop(){
 	window.scrollTo(0,0);
 }
 function sFocus(){
