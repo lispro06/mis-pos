@@ -81,7 +81,7 @@ function confirm_entry()
 		}
 		function saveSum(){
 <?php
-	$docSql="select * from t_doctor order by `no` asc";
+	$docSql="select * from toto_doctor order by `no` asc";
 	$docRes = mysql_query($docSql, $connect); 
 	$docTot = mysql_num_rows($docRes); // 총 레코드 수
 	$docNum=$docTot;
